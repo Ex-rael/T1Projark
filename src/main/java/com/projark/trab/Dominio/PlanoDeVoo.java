@@ -3,13 +3,13 @@ package com.projark.trab.Dominio;
 import java.util.Date;
 
 public class PlanoDeVoo {
-    private String idVoo;
+    private int idVoo;
     private Date data;
     private double altitude;
     private Rota rota;
     private double velCruzeiro;
 
-    public PlanoDeVoo(String idVoo, Date data, double altitude, Rota rota, double velCruzeiro) {
+    public PlanoDeVoo(int idVoo, Date data, double altitude, Rota rota, double velCruzeiro) {
         this.idVoo = idVoo;
         this.data = data;
         this.altitude = altitude;
@@ -17,11 +17,11 @@ public class PlanoDeVoo {
         this.velCruzeiro = velCruzeiro;
     }
 
-    public String getIdVoo() {
+    public int getIdVoo() {
         return idVoo;
     }
 
-    public void setIdVoo(String idVoo) {
+    public void setIdVoo(int idVoo) {
         this.idVoo = idVoo;
     }
 
