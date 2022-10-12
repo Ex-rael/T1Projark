@@ -7,6 +7,7 @@ public class Aerovia {
     private double distancia;
 
     public Aerovia(String nome, RefGeo origem, RefGeo destino, double distancia) {
+        if(nome.matches([AV]-))//regex <==============
         this.nome = nome;
         this.origem = origem;
         this.destino = destino;
@@ -45,4 +46,11 @@ public class Aerovia {
         this.distancia = distancia;
     }
 
+    private boolean isDistanciaValid(double distancia){
+        boolean isDistanciaValid = false;
+        if(distancia == 1000){
+            isDistanciaValid = true;
+        } 
+        return isDistanciaValid;     
+    }
 }
