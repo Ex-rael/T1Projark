@@ -1,4 +1,4 @@
-package com.projark.trab;
+package com.projark.trab.Dominio;
 
 import java.util.Date;
 
@@ -56,6 +56,5 @@ public class PlanoDeVoo {
     public void setVelCruzeiro(double velCruzeiro) {
         this.velCruzeiro = velCruzeiro;
     }
-
 
 }

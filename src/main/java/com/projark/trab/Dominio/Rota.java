@@ -1,7 +1,7 @@
-package com.projark.trab;
+package com.projark.trab.Dominio;
 
 public class Rota {
-    
+
     private String nome;
 
     public Rota(String nome) {
@@ -15,5 +15,5 @@ public class Rota {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
+
 }

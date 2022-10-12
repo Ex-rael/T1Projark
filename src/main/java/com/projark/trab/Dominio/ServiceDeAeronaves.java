@@ -1,5 +1,5 @@
-package com.projark.trab;
+package com.projark.trab.Dominio;
 
 public class ServiceDeAeronaves {
-    
+
 }
