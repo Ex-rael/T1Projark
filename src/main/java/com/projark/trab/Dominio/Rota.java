@@ -1,5 +1,10 @@
 package com.projark.trab.Dominio;
 
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Component
 public class Rota {
 
     private int idRota;
