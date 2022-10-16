@@ -3,8 +3,9 @@ package com.projark.trab.Dominio;
 public class Rota {
 
     private int idRota;
-
     private String nome;
+    private RefGeo origem;
+    private RefGeo destino;
 
     public int getIdRota() {
         return idRota;
@@ -24,6 +25,14 @@ public class Rota {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public RefGeo getOrigem() {
+        return origem;
+    }
+
+    public RefGeo getDestino() {
+        return destino;
     }
 
 }
