@@ -2,7 +2,7 @@ package com.projark.trab.Dominio;
 
 import java.util.Collection;
 
-public class IRotasRep {
+public interface IRotasRep { // < ==========================
 
     public static void cadastra(Rota rota) {
     }

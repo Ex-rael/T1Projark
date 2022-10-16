@@ -7,6 +7,13 @@ public class Rota {
     private RefGeo origem;
     private RefGeo destino;
 
+    public Rota(int idRota, String nome, RefGeo origem, RefGeo destino) {
+        this.idRota = idRota;
+        this.nome = nome;
+        this.origem = origem;
+        this.destino = destino;
+    }
+
     public int getIdRota() {
         return idRota;
     }
