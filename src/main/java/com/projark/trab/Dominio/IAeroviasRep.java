@@ -1,7 +1,7 @@
 package com.projark.trab.Dominio;
 
 import java.util.Collection;
-import org.springframework.data.repository.CrudRepository;
+//import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
