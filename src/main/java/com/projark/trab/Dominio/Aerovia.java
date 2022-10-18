@@ -1,6 +1,14 @@
 package com.projark.trab.Dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Aerovia {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idAerovia;
     private String nome;
     private RefGeo origem;

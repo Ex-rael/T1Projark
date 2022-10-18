@@ -1,13 +1,13 @@
-package com.projark.trab;
+package com.projark.trab.Controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TrabApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(TrabApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }

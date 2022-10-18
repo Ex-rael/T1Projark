@@ -1,14 +1,10 @@
 package com.projark.trab.InterfacesAdaptadoras.Repositorios;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.projark.trab.Dominio.Aerovia;
-import com.projark.trab.Dominio.IAeroviasRep;
 
-public class RepositorioAerovias {
+public interface RepositorioAerovias extends JpaRepository<Aerovia,Integer>{
 
-    private IAeroviasRep iar;
-
-    public RepositorioAerovias(IAeroviasRep iar) {
-        this.iar = iar;
-    }
 
 }

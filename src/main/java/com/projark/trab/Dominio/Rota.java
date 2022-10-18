@@ -1,30 +1,34 @@
 package com.projark.trab.Dominio;
 
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Component
+
+@Entity
 public class Rota {
 
-    private int idRota;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String nome;
     private RefGeo origem;
     private RefGeo destino;
 
-    public Rota(int idRota, String nome, RefGeo origem, RefGeo destino) {
-        this.idRota = idRota;
+    public Rota(int id, String nome, RefGeo origem, RefGeo destino) {
+        this.id = id;
         this.nome = nome;
         this.origem = origem;
         this.destino = destino;
     }
 
     public int getIdRota() {
-        return idRota;
+        return id;
     }
 
-    public void setIdRota(int idRota) {
-        this.idRota = idRota;
+    public void setIdRota(int id) {
+        this.id = id;
     }
 
     public Rota(String nome) {

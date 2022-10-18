@@ -1,13 +1,10 @@
 package com.projark.trab.InterfacesAdaptadoras.Repositorios;
 
-import com.projark.trab.Dominio.IRotasRep;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class RepositorioRotas {
+import com.projark.trab.Dominio.Rota;
+public interface RepositorioRotas extends JpaRepository<Rota,Integer> {
 
-    private IRotasRep irr;
-
-    public RepositorioRotas(IRotasRep irr) {
-        this.irr = irr;
-    }
+    
 
 }
