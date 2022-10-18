@@ -2,8 +2,8 @@ package com.projark.trab.InterfacesAdaptadoras.Repositorios;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.projark.trab.Dominio.Aerovia;
+import com.projark.trab.Dominio.RefGeo;
 
-public interface RepositorioAerovias extends JpaRepository<Aerovia, Long> {
+public interface RepositorioRefGeo extends JpaRepository<RefGeo, Long> {
 
 }

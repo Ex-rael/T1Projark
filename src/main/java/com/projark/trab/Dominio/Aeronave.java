@@ -8,20 +8,20 @@ import javax.persistence.Id;
 @Entity
 public class Aeronave {
 
-    @Id
+    private @Id @GeneratedValue Long id;
+
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idAeronave;
 
-    private String prefixo() {
-        return null;
+    public String prefixo(String prefixo) {
+        return prefixo;
     }
 
-    private int velocidadeCruzeiro() {
-        return 0;
+    private int velocidadeCruzeiro(int velCruzeiro) {
+        return velCruzeiro;
     }
 
-    private int autonomia() {
-        return 0;
+    private int autonomia(int autonomia) {
+        return autonomia;
     }
 
     public boolean isAltitudeValid(int altitude) {
@@ -31,11 +31,37 @@ public class Aeronave {
             return false;
     }
 
-    public int getIdAeronave() {
-        return idAeronave;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdAeronave(int idAeronave) {
-        this.idAeronave = idAeronave;
+    public void setIdAeronave(Long id) {
+        this.id = id;
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Aeronave other = (Aeronave) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
 }

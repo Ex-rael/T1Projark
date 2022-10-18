@@ -1,14 +1,9 @@
 package com.projark.trab.InterfacesAdaptadoras.Repositorios;
 
-import com.projark.trab.Dominio.IPlanosRep;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class RepositorioDePlanos {
+import com.projark.trab.Dominio.PlanoDeVoo;
 
-    private IPlanosRep ipr;
-
-    public RepositorioDePlanos(IPlanosRep ipr) {
-        this.ipr = ipr;
-
-    }
+public interface RepositorioDePlanos extends JpaRepository<PlanoDeVoo, Long> {
 
 }
