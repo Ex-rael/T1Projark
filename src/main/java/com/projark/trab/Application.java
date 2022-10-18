@@ -1,4 +1,4 @@
-package com.projark.trab.Controller;
+package com.projark.trab;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
