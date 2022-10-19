@@ -40,8 +40,18 @@ public class AeronaveController {
     }
 
     @PostMapping("/aeronave")
-    Aeronave novaAeronave(@RequestBody Aeronave novaAeronave) {
-        return repositorioAeronaves.save(novaAeronave);
+    AeronaveCarga novaAeronaveCarga(@RequestBody AeronaveCarga novaAeronaveCarga) {
+        return repositorioAeronaves.save(novaAeronaveCarga);
+    }
+
+    @PostMapping("/aeronave")
+    AeronavePassageiros novaAeronavePassageiros(@RequestBody AeronavePassageiros novaAeronavePassageiros) {
+        return repositorioAeronaves.save(novaAeronavePassageiros);
+    }
+
+    @PostMapping("/aeronave")
+    AeronavePequenoPorte novaAeronavePequenoPorte(@RequestBody AeronavePequenoPorte novaAeronavePequenoPorte) {
+        return repositorioAeronaves.save(novaAeronavePequenoPorte);
     }
 
     @GetMapping("/aeronave/{id}")
