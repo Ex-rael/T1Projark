@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import com.projark.trab.Dominio.Aeronave;
-import com.projark.trab.Excecoes.RefGeoNotFoundException;
-import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioRefGeo;
+
+import com.projark.trab.Dominio.Aerovia;
+import com.projark.trab.Excecoes.AeroviaNotFoundException;
+import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioAerovias;
 
 @RestController
 public class AeroviaController {
@@ -25,46 +26,48 @@ public class AeroviaController {
         return sessionFactory;
     }
 
-    private final RepositorioRefGeo repositorioRefGeo;
+    private final RepositorioAerovias repositorioAerovias;
 
-    RefGeoController(RepositorioRefGeo repositorioRefGeo) {
-        this.repositorioRefGeo = repositorioRefGeo;
+    AeroviaController(RepositorioAerovias repositorioAerovias) {
+        this.repositorioAerovias = repositorioAerovias;
     }
 
-    @GetMapping("/refGeo")
-    List<RefGeo> all() {
-        return repositorioRefGeo.findAll();
+    @GetMapping("/aerovia")
+    List<Aerovia> all() {
+        return repositorioAerovias.findAll();
     }
 
-    @PostMapping("/refGeo")
-    RefGeo novoRefGeo(@RequestBody RefGeo newRefGeo) {
-        return repositorioRefGeo.save(newRefGeo);
+    @PostMapping("/aerovia")
+    Aerovia novoAerovia(@RequestBody Aerovia newAerovia) {
+        return repositorioAerovias.save(newAerovia);
     }
 
-    @GetMapping("/refGeo/{id}")
-    RefGeo one(@PathVariable Long id) {
-        return repositorioRefGeo.findById(id)
-                .orElseThrow(() -> new RefGeoNotFoundException(id));
+    @GetMapping("/aerovia/{id}")
+    Aerovia one(@PathVariable Long id) {
+        return repositorioAerovias.findById(id)
+                .orElseThrow(() -> new AeroviaNotFoundException(id));
     }
 
-    @PutMapping("/refGeo/{id}")
-    RefGeo substituirRefGeo(@RequestBody RefGeo novoRefGeo, @PathVariable Long id) {
-        return repositorioRefGeo.findById(id).map(refGeo -> {
-            refGeo.setNome(novoRefGeo.getNome());
-            refGeo.setLatitude(novoRefGeo.getLatitude());
-            refGeo.setLongitude(novoRefGeo.getLongitude());
-            return repositorioRefGeo.save(refGeo);
+    @PutMapping("/aerovia/{id}")
+    Aerovia substituirAerovia(@RequestBody Aerovia novoAerovia, @PathVariable Long id) {
+        return repositorioAerovias.findById(id).map(Aerovia -> {
+            Aerovia.setNome(novoAerovia.getNome());
+            Aerovia.setNome(novoAerovia.getNome());
+            Aerovia.setOrigem(novoAerovia.getOrigem());
+            Aerovia.setDestino(novoAerovia.getDestino());
+            Aerovia.setDistancia(novoAerovia.getDistancia());
+            return repositorioAerovias.save(Aerovia);
         })
                 .orElseGet(() -> {
-                    novoRefGeo.setId(id);
-                    return repositorioRefGeo.save(novoRefGeo);
+                    novoAerovia.setId(id);
+                    return repositorioAerovias.save(novoAerovia);
                 });
 
     }
 
-    @DeleteMapping("/refGeo/{id}")
-    void deleteRefGeo(@PathVariable Long id) {
-        repositorioRefGeo.deleteById(id);
+    @DeleteMapping("/aerovia/{id}")
+    void deleteAerovia(@PathVariable Long id) {
+        repositorioAerovias.deleteById(id);
     }
 
 }
