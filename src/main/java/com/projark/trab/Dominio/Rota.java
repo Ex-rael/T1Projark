@@ -44,8 +44,16 @@ public class Rota {
         return origem;
     }
 
+    public void setOrigem(RefGeo origem) {
+        this.origem = origem;
+    }
+
     public RefGeo getDestino() {
         return destino;
+    }
+
+    public void setDestino(RefGeo destino) {
+        this.destino = destino;
     }
 
     @Override

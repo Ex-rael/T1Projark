@@ -1,5 +1,6 @@
 package com.projark.trab.Dominio;
 
+import java.util.Random;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,15 +13,21 @@ public class Aeronave {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    public String prefixo(String prefixo) {
-        return prefixo;
+    public String prefixo() {
+        Random numPrefix = new Random(999);
+        StringBuilder sb = new StringBuilder();
+        sb.append(numPrefix);
+        String prefCompleto = "AA- " + numPrefix;
+        return prefCompleto;
     }
 
-    private int velocidadeCruzeiro(int velCruzeiro) {
+    public int velocidadeCruzeiro() {
+        int velCruzeiro = 500;
         return velCruzeiro;
     }
 
-    private int autonomia(int autonomia) {
+    public int autonomia() {
+        int autonomia = 10;
         return autonomia;
     }
 
@@ -35,7 +42,7 @@ public class Aeronave {
         return id;
     }
 
-    public void setIdAeronave(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

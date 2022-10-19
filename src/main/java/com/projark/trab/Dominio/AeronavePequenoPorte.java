@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class AeronavePequenoPorte extends Aeronave {
 
-    public String prefixo(String prefixo) {
+    public String prefixo() {
         Random numPrefix = new Random(999);
         StringBuilder sb = new StringBuilder();
         sb.append(numPrefix);
@@ -12,13 +12,13 @@ public class AeronavePequenoPorte extends Aeronave {
         return prefCompleto;
     }
 
-    private int velocidadeCruzeiro(int velCruzeiro) {
-        velCruzeiro = 450;
+    public int velocidadeCruzeiro() {
+        int velCruzeiro = 450;
         return velCruzeiro;
     }
 
-    private int autonomia(int autonomia) {
-        autonomia = 10;
+    public int autonomia() {
+        int autonomia = 10;
         return autonomia;
     }
 }
