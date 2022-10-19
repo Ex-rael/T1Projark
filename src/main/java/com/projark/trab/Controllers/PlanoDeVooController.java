@@ -18,7 +18,7 @@ import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioDePlanos;
 @RestController
 public class PlanoDeVooController {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryPlanoDeVoo")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 

@@ -18,7 +18,7 @@ import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioRefGeo;
 @RestController
 public class RefGeoController {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryRefGeo")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 

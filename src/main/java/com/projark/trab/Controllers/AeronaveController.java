@@ -21,7 +21,7 @@ import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioAeronaves;
 @RestController
 public class AeronaveController {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryAeronave")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 

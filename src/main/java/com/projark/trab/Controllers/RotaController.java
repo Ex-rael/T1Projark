@@ -18,7 +18,7 @@ import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioRotas;
 @RestController
 public class RotaController {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryRota")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 
