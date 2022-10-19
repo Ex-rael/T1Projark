@@ -5,15 +5,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.projark.trab.Controllers.RefGeoController;
 import com.projark.trab.Dominio.AeronaveCarga;
 import com.projark.trab.Dominio.AeronavePassageiros;
 import com.projark.trab.Dominio.AeronavePequenoPorte;
+import com.projark.trab.Dominio.Aerovia;
 import com.projark.trab.Dominio.RefGeo;
 import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioAeronaves;
 import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioAerovias;
@@ -46,8 +44,13 @@ public class Application {
             log.info("Carregando " + repositorioRefGeo.save(new RefGeo("A5", 800, 1000)));
 
             log.info("Carregando " + repositorioAeronaves.save(new AeronaveCarga()));
+            log.info("Carregando " + repositorioAeronaves.save(new AeronaveCarga()));
             log.info("Carregando " + repositorioAeronaves.save(new AeronavePassageiros()));
             log.info("Carregando " + repositorioAeronaves.save(new AeronavePequenoPorte()));
+            log.info("Carregando " + repositorioAeronaves.save(new AeronavePequenoPorte()));
+
+            // espaço para aerovias, rotas e planos de voos(descobrir como ligar refGeos
+            // adicionadas no banco)
 
         };
     }
