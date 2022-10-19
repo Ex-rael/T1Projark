@@ -1,7 +1,8 @@
 package com.projark.trab.Controllers;
 
 import java.util.List;
-
+import org.springframework.context.annotation.Bean;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,13 @@ import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioRefGeo;
 @RestController
 public class RefGeoController {
 
+    @Bean(name = "entityManagerFactory")
+    public LocalSessionFactoryBean sessionFactory() {
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+
+        return sessionFactory;
+    }
+
     private final RepositorioRefGeo repositorioRefGeo;
 
     RefGeoController(RepositorioRefGeo repositorioRefGeo) {
@@ -29,8 +37,8 @@ public class RefGeoController {
     }
 
     @PostMapping("/refGeo")
-    RefGeo novoRefGeo(@RequestBody RefGeo novoRefGeo) {
-        return repositorioRefGeo.save(novoRefGeo);
+    RefGeo novoRefGeo(@RequestBody RefGeo newRefGeo) {
+        return repositorioRefGeo.save(newRefGeo);
     }
 
     @GetMapping("/refGeo/{id}")
