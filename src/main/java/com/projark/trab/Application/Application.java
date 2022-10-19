@@ -5,7 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.projark.trab.Dominio.AeronaveCarga;
 import com.projark.trab.Dominio.AeronavePassageiros;
@@ -18,6 +21,9 @@ import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioRefGeo;
 import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioRotas;
 
 @SpringBootApplication
+@ComponentScan
+@EntityScan
+@EnableJpaRepositories
 public class Application {
 
     public static void main(String[] args) {
@@ -36,6 +42,8 @@ public class Application {
             log.info("Carregando " + repositorioRefGeo.save(new RefGeo("A1", 0, 0)));
             log.info("Carregando " + repositorioRefGeo.save(new RefGeo("A2", 200, 100)));
             log.info("Carregando " + repositorioRefGeo.save(new RefGeo("A3", 450, 335)));
+            log.info("Carregando " + repositorioRefGeo.save(new RefGeo("A4", 650, 500)));
+            log.info("Carregando " + repositorioRefGeo.save(new RefGeo("A5", 800, 1000)));
 
             log.info("Carregando " + repositorioAeronaves.save(new AeronaveCarga()));
             log.info("Carregando " + repositorioAeronaves.save(new AeronavePassageiros()));

@@ -29,8 +29,8 @@ public class RefGeoController {
     }
 
     @PostMapping("/refGeo")
-    RefGeo newRefGeo(@RequestBody RefGeo newRefGeo) {
-        return repositorioRefGeo.save(newRefGeo);
+    RefGeo novoRefGeo(@RequestBody RefGeo novoRefGeo) {
+        return repositorioRefGeo.save(novoRefGeo);
     }
 
     @GetMapping("/refGeo/{id}")
