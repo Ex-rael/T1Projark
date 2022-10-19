@@ -13,6 +13,8 @@ import com.projark.trab.Dominio.AeronavePassageiros;
 import com.projark.trab.Dominio.AeronavePequenoPorte;
 import com.projark.trab.Dominio.Aerovia;
 import com.projark.trab.Dominio.RefGeo;
+import com.projark.trab.Dominio.Rota;
+import com.projark.trab.Dominio.PlanoDeVoo;
 import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioAeronaves;
 import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioAerovias;
 import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioDePlanos;
