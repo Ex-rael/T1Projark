@@ -92,7 +92,7 @@ public class AeronaveController {
     }
 
     @PutMapping("/aeronave/{id}")
-    Aeronave substituirAeronaveDeCarga(@RequestBody AeronavePequenoPorte novaAeronavePequenoPorte,
+    Aeronave substituirAeronavePequenoPorte(@RequestBody AeronavePequenoPorte novaAeronavePequenoPorte,
             @PathVariable Long id) {
         return repositorioAeronaves.findById(id).map(AeronavePequenoPorte -> {
             AeronavePequenoPorte.prefixo();
