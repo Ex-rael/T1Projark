@@ -9,18 +9,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.projark.trab.Dominio.AeronaveCarga;
-import com.projark.trab.Dominio.AeronavePassageiros;
-import com.projark.trab.Dominio.AeronavePequenoPorte;
-import com.projark.trab.Dominio.Aerovia;
-import com.projark.trab.Dominio.RefGeo;
-import com.projark.trab.Dominio.Rota;
-import com.projark.trab.Dominio.PlanoDeVoo;
-import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioAeronaves;
-import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioAerovias;
-import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioDePlanos;
-import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioRefGeo;
-import com.projark.trab.InterfacesAdaptadoras.Repositorios.RepositorioRotas;
+import com.projark.trab.Adaptadores.Repositorios.IRepAeronavesCRUD;
+import com.projark.trab.Adaptadores.Repositorios.IRepAeroviasCRUD;
+import com.projark.trab.Adaptadores.Repositorios.IRepPlanosCRUD;
+import com.projark.trab.Adaptadores.Repositorios.IRepRefGeoCRUD;
+import com.projark.trab.Adaptadores.Repositorios.IRepRotasCRUD;
+import com.projark.trab.Dominio.Entidades.AeronaveCarga;
+import com.projark.trab.Dominio.Entidades.AeronavePassageiros;
+import com.projark.trab.Dominio.Entidades.AeronavePequenoPorte;
+import com.projark.trab.Dominio.Entidades.Aerovia;
+import com.projark.trab.Dominio.Entidades.PlanoDeVoo;
+import com.projark.trab.Dominio.Entidades.RefGeo;
+import com.projark.trab.Dominio.Entidades.Rota;
 
 @SpringBootApplication
 @EnableJpaRepositories
@@ -35,9 +35,9 @@ public class Application {
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
     @Bean
-    CommandLineRunner iniciarBanco(RepositorioRefGeo repositorioRefGeo,
-            RepositorioAeronaves repositorioAeronaves, RepositorioAerovias repositorioAerovias,
-            RepositorioDePlanos repositorioDePlanos, RepositorioRotas repositorioRotas) {
+    CommandLineRunner iniciarBanco(IRepRefGeoCRUD repositorioRefGeo,
+            IRepAeronavesCRUD repositorioAeronaves, IRepAeroviasCRUD repositorioAerovias,
+            IRepPlanosCRUD repositorioDePlanos, IRepRotasCRUD repositorioRotas) {
 
         return args -> {
             log.info("Carregando " + repositorioRefGeo.save(new RefGeo("A1", 0, 0)));
