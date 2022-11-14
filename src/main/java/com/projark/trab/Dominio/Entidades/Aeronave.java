@@ -5,13 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "aeronaves")
 public class Aeronave {
 
-    private @Id @GeneratedValue Long id;
-
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private @Id Long id;
 
     public String prefixo() {
         Random numPrefix = new Random(999);

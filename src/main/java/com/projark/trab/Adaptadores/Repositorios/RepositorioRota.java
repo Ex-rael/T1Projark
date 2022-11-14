@@ -36,7 +36,7 @@ public class RepositorioRota {
     }
 
     @PostMapping("/rota")
-    Rota novoRota(@RequestBody Rota newRota) {
+    Rota novaRota(@RequestBody Rota newRota) {
         return repositorioRotas.save(newRota);
     }
 
@@ -47,16 +47,15 @@ public class RepositorioRota {
     }
 
     @PutMapping("/rota/{id}")
-    Rota substituirRota(@RequestBody Rota novoRota, @PathVariable Long id) {
+    Rota substituirRota(@RequestBody Rota novaRota, @PathVariable Long id) {
         return repositorioRotas.findById(id).map(Rota -> {
-            Rota.setNome(novoRota.getNome());
-            Rota.setOrigem(novoRota.getOrigem());
-            Rota.setDestino(novoRota.getDestino());
+            Rota.setNome(novaRota.getNome());
+            Rota.setAerovias(novaRota.getAerovias());
             return repositorioRotas.save(Rota);
         })
                 .orElseGet(() -> {
-                    novoRota.setId(id);
-                    return repositorioRotas.save(novoRota);
+                    novaRota.setId(id);
+                    return repositorioRotas.save(novaRota);
                 });
 
     }

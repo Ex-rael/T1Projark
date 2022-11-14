@@ -1,23 +1,27 @@
 package com.projark.trab.Dominio.Entidades;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
 
 @Entity
+@Table(name = "rotas")
 public class Rota {
 
-    private @Id @GeneratedValue Long id;
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String nome;
-    private RefGeo origem;
-    private RefGeo destino;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private @Id Long id;
 
-    public Rota(String nome, RefGeo origem, RefGeo destino) {
+    private String nome;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "rotas_aerovias", joinColumns = @JoinColumn(name = "rota_id"), inverseJoinColumns = @JoinColumn(name = "aerovia_id"))
+    private List<Aerovia> aerovias = new ArrayList<>();
+
+    public Rota(Long id, String nome, List<Aerovia> aerovias) {
+        this.id = id;
         this.nome = nome;
-        this.origem = origem;
-        this.destino = destino;
+        this.aerovias = aerovias;
     }
 
     public Long getId() {
@@ -40,30 +44,13 @@ public class Rota {
         this.nome = nome;
     }
 
-    public RefGeo getOrigem() {
-        return origem;
-    }
-
-    public void setOrigem(RefGeo origem) {
-        this.origem = origem;
-    }
-
-    public RefGeo getDestino() {
-        return destino;
-    }
-
-    public void setDestino(RefGeo destino) {
-        this.destino = destino;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-        result = prime * result + ((origem == null) ? 0 : origem.hashCode());
-        result = prime * result + ((destino == null) ? 0 : destino.hashCode());
+        result = prime * result + ((aerovias == null) ? 0 : aerovias.hashCode());
         return result;
     }
 
@@ -86,22 +73,25 @@ public class Rota {
                 return false;
         } else if (!nome.equals(other.nome))
             return false;
-        if (origem == null) {
-            if (other.origem != null)
+        if (aerovias == null) {
+            if (other.aerovias != null)
                 return false;
-        } else if (!origem.equals(other.origem))
-            return false;
-        if (destino == null) {
-            if (other.destino != null)
-                return false;
-        } else if (!destino.equals(other.destino))
+        } else if (!aerovias.equals(other.aerovias))
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Rota [id=" + id + ", nome=" + nome + ", origem=" + origem + ", destino=" + destino + "]";
+        return "Rota [id=" + id + ", nome=" + nome + ", aerovias=" + aerovias + "]";
+    }
+
+    public List<Aerovia> getAerovias() {
+        return aerovias;
+    }
+
+    public void setAerovias(List<Aerovia> aerovias) {
+        this.aerovias = aerovias;
     }
 
 }

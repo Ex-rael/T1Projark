@@ -1,22 +1,26 @@
 package com.projark.trab.Dominio.Entidades;
 
-import java.util.Date;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.time.LocalDateTime;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "planos_de_voo")
 public class PlanoDeVoo {
-    private @Id @GeneratedValue Long id;
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Date data;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private @Id Long id;
+
+    @Column(name = "data_horario")
+    private LocalDateTime data;
+
     private double altitude;
+
+    @OneToOne
+    @JoinColumn(name = "rota_id", referencedColumnName = "id")
     private Rota rota;
+
     private double velCruzeiro;
 
-    public PlanoDeVoo(Date data, double altitude, Rota rota, double velCruzeiro) {
+    public PlanoDeVoo(LocalDateTime data, double altitude, Rota rota, double velCruzeiro) {
         this.data = data;
         this.altitude = altitude;
         this.rota = rota;
@@ -31,11 +35,11 @@ public class PlanoDeVoo {
         this.id = id;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
