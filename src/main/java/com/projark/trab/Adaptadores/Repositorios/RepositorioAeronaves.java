@@ -20,7 +20,7 @@ import com.projark.trab.Excecoes.AeronaveNotFoundException;
 @RestController
 public class RepositorioAeronaves {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryAeronave")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 
@@ -91,7 +91,7 @@ public class RepositorioAeronaves {
     }
 
     @PutMapping("/aeronave/{id}")
-    Aeronave substituirAeronaveDeCarga(@RequestBody AeronavePequenoPorte novaAeronavePequenoPorte,
+    Aeronave substituirAeronavePequenoPorte(@RequestBody AeronavePequenoPorte novaAeronavePequenoPorte,
             @PathVariable Long id) {
         return repositorioAeronaves.findById(id).map(AeronavePequenoPorte -> {
             AeronavePequenoPorte.prefixo();

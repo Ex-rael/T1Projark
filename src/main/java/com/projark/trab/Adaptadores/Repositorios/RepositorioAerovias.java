@@ -18,7 +18,7 @@ import com.projark.trab.Excecoes.AeroviaNotFoundException;
 @RestController
 public class RepositorioAerovias {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryAerovia")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 

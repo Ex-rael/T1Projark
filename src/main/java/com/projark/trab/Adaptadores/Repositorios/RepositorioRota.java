@@ -17,7 +17,7 @@ import com.projark.trab.Excecoes.RotaNotFoundException;
 @RestController
 public class RepositorioRota {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryRota")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 

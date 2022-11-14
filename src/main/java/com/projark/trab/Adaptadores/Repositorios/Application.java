@@ -1,5 +1,6 @@
 // T1 de Projeto e Arquitetura de Software - Arthur Zanella Lovato, Felipe Fonseca Fagundes, Israel Graziola Garcia, Luiz Felipe Porto Lara de Oliveira
-package com.projark.trab;
+// github.com/Ex-rael/T1Projark
+package com.projark.trab.Controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

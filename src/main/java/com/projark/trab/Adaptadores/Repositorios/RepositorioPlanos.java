@@ -17,7 +17,7 @@ import com.projark.trab.Excecoes.PlanoDeVooNotFoundException;
 @RestController
 public class RepositorioPlanos {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryPlanoDeVoo")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 

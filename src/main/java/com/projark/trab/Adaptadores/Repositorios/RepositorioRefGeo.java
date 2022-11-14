@@ -17,7 +17,7 @@ import com.projark.trab.Excecoes.RefGeoNotFoundException;
 @RestController
 public class RepositorioRefGeo {
 
-    @Bean(name = "entityManagerFactory")
+    @Bean(name = "entityManagerFactoryRefGeo")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 
