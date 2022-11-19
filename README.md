@@ -3,4 +3,4 @@
 //
 //
 
-# Pensa num cara ZIKA -> [Luizinho PKF] (https://github.com/LuizFelipePLO)
+# Pensa num cara ZIKA -> [Luizinho PKF](https://github.com/LuizFelipePLO)
